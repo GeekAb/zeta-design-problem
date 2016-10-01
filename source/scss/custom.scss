@@ -1,0 +1,75 @@
+$page-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$page-color: #605e58;
+$page-f-size: 14px;
+    
+body {
+    font: 100% $page-font;
+    font-size: $page-f-size;
+    color: $page-color;
+    background-color: #f2eee8;
+    margin: 0rem;
+}
+
+.header {
+    background-color: #fffbf5;
+    
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    
+    align-items : stretch;
+    align-content : stretch;
+    
+    i {
+        border: 1px solid #9a9a9a;
+        padding: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    
+    i.fa-leaf {
+        background-color: #80a8cc;
+        color: #fffbf5;
+    }
+    
+    i.fa-twitter {
+        color: #80a8cc;
+        border: none;
+        font-size: 2.5rem;
+        padding: 0;
+        padding-top: .5rem;
+    }
+
+    div.grow{
+        -webkit-flex: 2;
+        flex: 2;
+    }
+    
+    .search {
+        input{
+            height: 2rem;
+            margin-top: .5rem;
+            border: 1px solid #e3dfd8;
+            border-radius: 2rem;
+            background: transparent;
+            
+            &:focus{
+                outline:none;
+            }
+        }
+        
+        i{
+            position: relative;
+            z-index: 1;
+            left: -45px;
+            top: 1px;
+            color: #5f6778;
+            width: 0;
+            border: none;
+        }
+    }
+}
+
