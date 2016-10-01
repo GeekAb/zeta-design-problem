@@ -7,8 +7,6 @@ body {
 
 .header {
   background-color: #fffbf5;
-  display: -webkit-flex;
-  display: flex;
   -webkit-flex: 1;
   flex: 1;
   -webkit-flex-direction: row;
@@ -48,3 +46,15 @@ body {
     color: #5f6778;
     width: 0;
     border: none; }
+
+.content {
+  background-color: #fffbf5;
+  justify-content: center;
+  margin-top: 4rem; }
+  .content .block {
+    cursor: pointer; }
+    .content .block:hover, .content .block.active, .content .block:active {
+      border-bottom: 6px solid #80a8cc; }
+  .content .type {
+    letter-spacing: 0;
+    color: #c6c1b0; }
