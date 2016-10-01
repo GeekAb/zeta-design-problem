@@ -25,10 +25,16 @@ gulp.task('copyHtml', function() {
         .pipe(gulp.dest('build'));
 });
 
+/*Copy Data*/
+gulp.task('copyJSON', function() {
+    return gulp.src('source/*.json')
+        .pipe(gulp.dest('build'));
+});
+
 gulp.task('watch', function() {
   gulp.watch('source/js/*.js', ['js']);
   gulp.watch('source/scss/*.scss', ['css']);
   gulp.watch('source/*.html', ['copyHtml']);
 });
 
-gulp.task('default', ['js', 'css', 'copyHtml', 'watch']);
+gulp.task('default', ['js', 'css', 'copyHtml', 'copyJSON', 'watch']);

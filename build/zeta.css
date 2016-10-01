@@ -58,3 +58,19 @@ body {
   .content .type {
     letter-spacing: 0;
     color: #c6c1b0; }
+
+.stream .stream-item {
+  border-bottom: 1px solid #f1ede8;
+  flex-direction: row;
+  align-items: flex-start;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+  .stream .stream-item .stream-item-data {
+    -webkit-flex: 2;
+    flex: 2; }
+  .stream .stream-item .name {
+    color: #57575f; }
+  .stream .stream-item .username {
+    color: #c6c1b0; }
