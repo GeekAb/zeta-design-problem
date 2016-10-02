@@ -75,11 +75,11 @@ body {
       cursor: pointer;
       max-height: 400px;
       overflow: hidden; }
-      .stream .stream-item .stream-item-data .media .imageContainer {
+      .stream .stream-item .stream-item-data .media .eleContainer {
         height: 100%;
         position: relative;
         width: 100%; }
-        .stream .stream-item .stream-item-data .media .imageContainer img {
+        .stream .stream-item .stream-item-data .media .eleContainer img, .stream .stream-item .stream-item-data .media .eleContainer video {
           width: 100%;
           top: -0px; }
   .stream .stream-item .name {

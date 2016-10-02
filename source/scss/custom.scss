@@ -112,12 +112,12 @@ body {
                 max-height: 400px;
                 overflow: hidden;
                 
-                .imageContainer {
+                .eleContainer {
                     height: 100%;
                     position: relative;
                     width: 100%;
                     
-                    img {
+                    img, video{
                         width: 100%;
                         top: -0px;
                     }

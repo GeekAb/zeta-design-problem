@@ -41,10 +41,12 @@ function returnTweetImg(data) {
     content.classList = 'media mt2';
     
     var container = document.createElement('div');
-    
+    container.className = 'eleContainer';
     if(data.type === 'photo') {
-        container.className = 'imageContainer';
         container.appendChild(createImage(data.media_url));
+        
+    } else if(data.type === 'animated_gif') {
+        container.innerHTML = createVideo(data.video_info.variants[0].url, data.media_url, '');
     }
     
     content.appendChild(container);
@@ -54,9 +56,23 @@ function returnTweetImg(data) {
 function createImage(src, alt, title) {
     var img= document.createElement('img');
     img.src= src;
-    if (alt!=null) img.alt= alt;
-    if (title!=null) img.title= title;
+    if (alt != null) img.alt= alt;
+    if (title != null) img.title= title;
     return img;
+}
+
+function createVideo(source, image, fallback) {
+    
+//    var vid = document.createElement('video');
+//    video.poster = image;
+//    vid.src = source;
+//    
+//    if(fallback != null)
+    
+    return '<video poster="'+image+'" autoplay loop>'+
+        '<source src="'+source+'" type=\'video/mp4; codecs="avc1.4D401E, mp4a.40.2"\'>'+
+        '<p>This is fallback content to display for user agents that do not support the video tag.</p>'+
+        '</video>';
 }
 
 
