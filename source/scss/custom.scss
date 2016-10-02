@@ -101,18 +101,35 @@ body {
         -webkit-flex: 1;
         flex: 1;
         
-        .stream-img{}
         .stream-item-data{
             -webkit-flex: 2;
             flex: 2;
             color: #6e6c66;
+            
+            .media {
+                border: 1px solid rgba(0,0,0,0.1);
+                cursor: pointer;
+                max-height: 400px;
+                overflow: hidden;
+                
+                .imageContainer {
+                    height: 100%;
+                    position: relative;
+                    width: 100%;
+                    
+                    img {
+                        width: 100%;
+                        top: -0px;
+                    }
+                }
+            }
         }
         
         .name {
             color: #57575f;
         }
         
-        .username {
+        .username a{
             color: #c6c1b0;
         }
     }

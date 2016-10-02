@@ -70,7 +70,19 @@ body {
     -webkit-flex: 2;
     flex: 2;
     color: #6e6c66; }
+    .stream .stream-item .stream-item-data .media {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      max-height: 400px;
+      overflow: hidden; }
+      .stream .stream-item .stream-item-data .media .imageContainer {
+        height: 100%;
+        position: relative;
+        width: 100%; }
+        .stream .stream-item .stream-item-data .media .imageContainer img {
+          width: 100%;
+          top: -0px; }
   .stream .stream-item .name {
     color: #57575f; }
-  .stream .stream-item .username {
+  .stream .stream-item .username a {
     color: #c6c1b0; }
