@@ -4,6 +4,8 @@ body {
   color: #605e58;
   background-color: #f2eee8;
   margin: 0rem; }
+  body i {
+    cursor: pointer; }
 
 .header {
   background-color: #fffbf5;
@@ -16,8 +18,7 @@ body {
   .header i {
     border: 1px solid #9a9a9a;
     padding: 1rem;
-    font-size: 1rem;
-    cursor: pointer; }
+    font-size: 1rem; }
   .header i.fa-leaf {
     background-color: #80a8cc;
     color: #fffbf5; }
@@ -70,6 +71,14 @@ body {
     -webkit-flex: 2;
     flex: 2;
     color: #6e6c66; }
+    .stream .stream-item .stream-item-data .name {
+      color: #57575f; }
+    .stream .stream-item .stream-item-data .username a {
+      color: #c6c1b0; }
+    .stream .stream-item .stream-item-data .time {
+      color: #d5d2cf; }
+    .stream .stream-item .stream-item-data .retweeted, .stream .stream-item .stream-item-data .favorited {
+      color: #acd373; }
     .stream .stream-item .stream-item-data .media {
       border: 1px solid rgba(0, 0, 0, 0.1);
       cursor: pointer;
@@ -82,7 +91,10 @@ body {
         .stream .stream-item .stream-item-data .media .eleContainer img, .stream .stream-item .stream-item-data .media .eleContainer video {
           width: 100%;
           top: -0px; }
-  .stream .stream-item .name {
-    color: #57575f; }
-  .stream .stream-item .username a {
-    color: #c6c1b0; }
+  .stream .stream-item .stream-item-footer {
+    color: #c6c1b0;
+    font-size: 1.3rem; }
+    .stream .stream-item .stream-item-footer > div {
+      cursor: pointer; }
+      .stream .stream-item .stream-item-footer > div:hover {
+        color: #acd373; }

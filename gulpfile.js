@@ -39,11 +39,17 @@ gulp.task('template', function () {
         .pipe(gulp.dest("./build"));
 });
 
+gulp.task('updateDocs', function () {
+    return gulp.src("build/*.*")
+        .pipe(gulp.dest("./docs"));
+});
+
 gulp.task('watch', function() {
   gulp.watch('source/js/*.js', ['js']);
   gulp.watch('source/scss/*.scss', ['css']);
   gulp.watch('source/*.html', ['copyHtml']);
+  gulp.watch('build/*.*', ['updateDocs']),
   gulp.watch('source/*.mustache', ['template']);
 });
 
-gulp.task('default', ['js', 'css', 'copyHtml', 'copyJSON', 'template', 'watch']);
+gulp.task('default', ['js', 'css', 'copyHtml', 'copyJSON', 'template', 'updateDocs', 'watch']);

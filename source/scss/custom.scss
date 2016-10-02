@@ -9,6 +9,10 @@ body {
     color: $page-color;
     background-color: #f2eee8;
     margin: 0rem;
+    
+    i {
+        cursor: pointer;
+    }
 }
 
 .header {
@@ -26,7 +30,6 @@ body {
         border: 1px solid #9a9a9a;
         padding: 1rem;
         font-size: 1rem;
-        cursor: pointer;
     }
     
     i.fa-leaf {
@@ -106,6 +109,22 @@ body {
             flex: 2;
             color: #6e6c66;
             
+            .name {
+                color: #57575f;
+            }
+
+            .username a{
+                color: #c6c1b0;
+            }
+            
+            .time {
+                color: #d5d2cf;
+            }
+            
+            .retweeted, .favorited {
+                color: #acd373;
+            }
+            
             .media {
                 border: 1px solid rgba(0,0,0,0.1);
                 cursor: pointer;
@@ -125,12 +144,17 @@ body {
             }
         }
         
-        .name {
-            color: #57575f;
-        }
-        
-        .username a{
+        .stream-item-footer {
             color: #c6c1b0;
+            font-size: 1.3rem;
+            
+            >div {
+                cursor: pointer;
+                
+                &:hover{
+                    color: #acd373;
+                }
+            }
         }
     }
 }
