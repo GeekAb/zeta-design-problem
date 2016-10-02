@@ -71,6 +71,8 @@ body {
     -webkit-flex: 2;
     flex: 2;
     color: #6e6c66; }
+    .stream .stream-item .stream-item-data a {
+      color: #009999; }
     .stream .stream-item .stream-item-data .name {
       color: #57575f; }
     .stream .stream-item .stream-item-data .username a {
@@ -91,6 +93,8 @@ body {
         .stream .stream-item .stream-item-data .media .eleContainer img, .stream .stream-item .stream-item-data .media .eleContainer video {
           width: 100%;
           top: -0px; }
+    .stream .stream-item .stream-item-data .stream-item-content {
+      line-height: 1.4rem; }
   .stream .stream-item .stream-item-footer {
     color: #c6c1b0;
     font-size: 1.3rem; }

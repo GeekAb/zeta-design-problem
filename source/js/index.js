@@ -30,8 +30,36 @@ function loadContent(callback) {
 * Function will return formated tweet text
 */
 function returnTweetText(data) {
-    return data;
+    
+    /*Manage mentions*/
+    var mentions = [];
+    var finalText = data;
+    
+    var re = /(@[\w]+)/g;
+    var m;
+
+    while ((m = re.exec(data)) != null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+        
+        finalText = finalText.replace(m[0],'<a href="https://twitter.com/'+m[1]+'">'+m[0]+'</a>');
+    }
+    
+    /*Manage Links*/
+    var re = /(((ftp|https|http?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g;
+    
+    while ((m = re.exec(data)) != null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+        
+        finalText = finalText.replace(m[0],'<a href="'+m[0]+'">'+m[0]+'</a>');
+    }
+
+    return finalText;
 }
+
 
 /*
 * Function will return formated tweet img
@@ -63,12 +91,6 @@ function createImage(src, alt, title) {
 
 function createVideo(source, image, fallback) {
     
-//    var vid = document.createElement('video');
-//    video.poster = image;
-//    vid.src = source;
-//    
-//    if(fallback != null)
-    
     return '<video poster="'+image+'" autoplay loop>'+
         '<source src="'+source+'" type=\'video/mp4; codecs="avc1.4D401E, mp4a.40.2"\'>'+
         '<p>This is fallback content to display for user agents that do not support the video tag.</p>'+
@@ -99,6 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         var currEle = '';
         var timeEle = '';
+        var tweetCount = 0;
+        var photoCount = 0;
+        var followingCount = 0;
+        var followerCount = 0;
+        
         tweets.forEach(function(tweet){
             var data = '';
             currEle = document.getElementById(tweet.id+'-content');
@@ -112,12 +139,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 var imgData = returnTweetImg(tweet.extended_entities.media[0]);
                 
                 currEle.appendChild(imgData);
+                
+                /*Counting only pics/videos available in data set.*/
+                photoCount++;
             }
             
             /*Change time content*/
             timeEle = document.getElementById(tweet.id+'-time');
             
             timeEle.innerHTML = getTweetTime(tweet.created_at);
+            
+            /*Manage Counts*/
+            tweetCount++;
+            /*If I am following tweete*/
+            if(tweet.user.following)
+                followingCount++;
         });
+        
+        /*Set Counts*/
+        document.getElementById('tweetsCount').innerHTML = tweetCount;
+        document.getElementById('picsCount').innerHTML = photoCount;
+        document.getElementById('followingCount').innerHTML = followingCount;
     });
 }, false);

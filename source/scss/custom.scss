@@ -109,6 +109,10 @@ body {
             flex: 2;
             color: #6e6c66;
             
+            a {
+                color: #009999;
+            }
+            
             .name {
                 color: #57575f;
             }
@@ -141,6 +145,10 @@ body {
                         top: -0px;
                     }
                 }
+            }
+            
+            .stream-item-content {
+                line-height: 1.4rem;
             }
         }
         
