@@ -981,7 +981,7 @@
          },
          "is_quote_status":false,
          "retweet_count":7,
-         "favorite_count":0,
+         "favorite_count":1,
          "favorited":true,
          "retweeted":true,
          "possibly_sensitive":false,
@@ -1310,7 +1310,7 @@
          },
          "is_quote_status":false,
          "retweet_count":1,
-         "favorite_count":0,
+         "favorite_count":1,
          "favorited":true,
          "retweeted":false,
          "lang":"en"
