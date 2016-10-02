@@ -397,7 +397,7 @@
          "retweet_count":1,
          "favorite_count":0,
          "favorited":false,
-         "retweeted":false,
+         "retweeted":true,
          "lang":"en"
       },
       {
@@ -982,8 +982,8 @@
          "is_quote_status":false,
          "retweet_count":7,
          "favorite_count":0,
-         "favorited":false,
-         "retweeted":false,
+         "favorited":true,
+         "retweeted":true,
          "possibly_sensitive":false,
          "possibly_sensitive_appealable":false,
          "lang":"en"
@@ -1311,7 +1311,7 @@
          "is_quote_status":false,
          "retweet_count":1,
          "favorite_count":0,
-         "favorited":false,
+         "favorited":true,
          "retweeted":false,
          "lang":"en"
       },
