@@ -75,6 +75,14 @@ function createVideo(source, image, fallback) {
         '</video>';
 }
 
+/*Global month array for renaming month number*/
+var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+function getTweetTime(createdAt) {
+    var d = new Date(createdAt);
+    
+    return monthNames[d.getMonth()] + ' ' + d.getDate();
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     /*Loading static html content*/
@@ -90,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var tweets = JSON.parse(response).content;
         
         var currEle = '';
-        
+        var timeEle = '';
         tweets.forEach(function(tweet){
             var data = '';
             currEle = document.getElementById(tweet.id+'-content');
@@ -105,6 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 currEle.appendChild(imgData);
             }
+            
+            /*Change time content*/
+            timeEle = document.getElementById(tweet.id+'-time');
+            
+            timeEle.innerHTML = getTweetTime(tweet.created_at);
         });
     });
 }, false);
