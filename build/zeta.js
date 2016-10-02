@@ -1,0 +1,1 @@
+function loadData(t){var e=new XMLHttpRequest;e.open("GET","tweet.html",!0),e.onreadystatechange=function(){4==e.readyState&&"200"==e.status&&t(e.responseText)},e.send(null)}document.addEventListener("DOMContentLoaded",function(){loadData(function(t){var e=document.getElementById("tweets");e.innerHTML=t})},!1);

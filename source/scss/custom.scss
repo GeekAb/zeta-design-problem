@@ -93,18 +93,19 @@ body {
 .stream {
     .stream-item {
         border-bottom: 1px solid #f1ede8;
-        flex-direction: row;
+        
         align-items:flex-start;
+        -webkit-flex-direction: row;
+        flex-direction: row;
         
         -webkit-flex: 1;
         flex: 1;
-        -webkit-flex-direction: row;
-        flex-direction: row;
         
         .stream-img{}
         .stream-item-data{
             -webkit-flex: 2;
             flex: 2;
+            color: #6e6c66;
         }
         
         .name {

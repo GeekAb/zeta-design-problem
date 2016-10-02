@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     watch = require('gulp-watch'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    mustache = require('gulp-mustache');
 
 /*Build JS Files*/
 gulp.task('js', function () {
@@ -31,10 +32,18 @@ gulp.task('copyJSON', function() {
         .pipe(gulp.dest('build'));
 });
 
+gulp.task('template', function () {
+    return gulp.src("source/*.mustache")
+        .pipe(mustache('source/data.json',{},{}))
+        .pipe(concat('tweet.html'))
+        .pipe(gulp.dest("./build"));
+});
+
 gulp.task('watch', function() {
   gulp.watch('source/js/*.js', ['js']);
   gulp.watch('source/scss/*.scss', ['css']);
   gulp.watch('source/*.html', ['copyHtml']);
+  gulp.watch('source/*.mustache', ['template']);
 });
 
-gulp.task('default', ['js', 'css', 'copyHtml', 'copyJSON', 'watch']);
+gulp.task('default', ['js', 'css', 'copyHtml', 'copyJSON', 'template', 'watch']);

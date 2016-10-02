@@ -1,0 +1,26 @@
+{{#content}}
+    <div class="stream-item p3 flex flex-wrap">
+        <div class="inline-block stream-img mr2">
+            <a href="https://twitter.com/{{user.screen_name}}">
+                <img src="{{user.profile_image_url}}" alt='{{user.name}}' class='circle' />
+            </a>
+        </div>
+        <div class="inline-block stream-item-data">
+            <div class="stream-item-head pb1">
+                <div class="name inline-block h3 bold pr1">{{user.name}}</div>
+                <div class="username inline-block h4"><a href="https://twitter.com/{{user.screen_name}}">@{{user.screen_name}}</a></div>
+                <div class="time inline-block right">7m</div>
+            </div>
+            <div class="stream-item-content pb2 pr2">
+                {{text}}
+            </div>
+            <div class="stream-item-footer">
+                <div class='inline-block mr1'><i class="fa fa-share" aria-hidden="true"></i></div>
+                <div class='inline-block mr1'><i class="fa fa-star" aria-hidden="true"></i></div>
+                <div class='inline-block mr1'><i class="fa fa-retweet" aria-hidden="true"></i><span>30</span></div>
+                <div class='inline-block mr1'><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+                <div class='inline-block mr1'><i class="fa fa-expand" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </div>
+{{/content}}

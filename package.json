@@ -10,16 +10,18 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-util": "latest",
-    "gulp-sass": "latest",
     "gulp-coffee": "latest",
-    "gulp-uglify": "latest",
     "gulp-concat": "latest",
-    "gulp-connect": "latest"
+    "gulp-connect": "latest",
+    "gulp-mustache": "^2.2.0",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest"
   },
   "dependencies": {
     "basscss": "^8.0.2",
     "font-awesome": "^4.6.3",
-    "gulp-watch": "^4.3.10"
+    "gulp-watch": "^4.3.10",
+    "mustache": "^2.2.1"
   }
 }
